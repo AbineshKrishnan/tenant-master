@@ -1,0 +1,23 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: tenant-master
+  r2dbc:
+    url: r2dbc:postgresql://localhost:5432/tenant_master
+    username: postgres
+    password: admin
+  messages:
+    basename: message
+    fallback-to-system-locale: true
+
+tenant:
+  dbConfig: create
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+    instance:
+      hostname: localhost
